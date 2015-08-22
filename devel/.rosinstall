@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/bhavya/dev/ros/catkin_wkspc/src/april_tag/devel/setup.sh

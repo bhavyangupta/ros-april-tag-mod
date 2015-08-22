@@ -1,0 +1,6 @@
+catkin/
+catkin_generated/
+cmake/
+CMakeFiles/
+devel/gtest/
+CMakeCache.txt
