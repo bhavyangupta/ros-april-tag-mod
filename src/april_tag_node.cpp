@@ -64,21 +64,21 @@ public:
     it_(nh_), 
     tag_codes(AprilTags::tagCodes36h11), 
     tag_detector(NULL),
-    camera_focal_length_y(346),
-    camera_focal_length_x(339),
-    tag_size(0.172), // 1 1/8in marker = 0.029m
+    camera_focal_length_y(520),
+    camera_focal_length_x(520),
+    tag_size(0.161), // 1 1/8in marker = 0.029m
     show_debug_image(true)
   {
     // Subscrive to input video feed and publish output video feed
-    image_sub_ = it_.subscribe("/camera/image", 1, &AprilTagNode::imageCb, this);
+    image_sub_ = it_.subscribe("/usb_cam/image_raw", 1, &AprilTagNode::imageCb, this);
     image_pub_ = it_.advertise("/april_tag_debug/output_video", 1);
     tag_list_pub = nh_.advertise<april_tag::AprilTagList>("/april_tags", 100);
 
     // Use a private node handle so that multiple instances of the node can
     // be run simultaneously while using different parameters.
     ros::NodeHandle private_node_handle("~"); 
-    private_node_handle.param<double>("focal_length_px", camera_focal_length_x, 339.0);
-    private_node_handle.param<double>("tag_size_cm", tag_size, 17.2);
+    private_node_handle.param<double>("focal_length_px", camera_focal_length_x, 520.0);
+    private_node_handle.param<double>("tag_size_cm", tag_size, 16.1);
     private_node_handle.param<bool>("show_debug_image", show_debug_image, true);
 
     camera_focal_length_y = camera_focal_length_x; // meh
