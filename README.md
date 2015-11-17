@@ -2,7 +2,7 @@ april_tag [MODIFIED]
 =========
 This is a modified version of the original april_tag rosnode developed by 
 palash : https://github.com/light-swarm/april_tag.
-Following changes have been made:
+Following changes have been made : 
 1. Changed message structure. See "Output" below.
 2. Messages are now published even if no tags are detected.
 3. Default april tag size changed.
